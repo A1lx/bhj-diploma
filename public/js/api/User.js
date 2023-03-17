@@ -28,11 +28,12 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    if (localStorage.user) {
-      return JSON.parse(localStorage.user);
-    } else {
-      return undefined;
-    }
+    // if (localStorage.user) {
+    //   return JSON.parse(localStorage.user);
+    // } else {
+    //   return undefined;
+    // }
+    return JSON.parse(localStorage.getItem('user'));
   }
 
   /**
