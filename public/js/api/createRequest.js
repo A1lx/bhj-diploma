@@ -4,7 +4,7 @@
  * */
 const createRequest = (options = {}) => {
   const xhr = new XMLHttpRequest();
-  //xhr.responseType = 'json';
+  xhr.responseType = 'json';
   const formData = new FormData();
   let url = options.url;
 

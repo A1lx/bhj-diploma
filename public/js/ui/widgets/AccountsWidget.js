@@ -33,15 +33,15 @@ class AccountsWidget {
     document.querySelector('.create-account').addEventListener('click', (event) => {
       event.preventDefault();
       App.getModal('createAccount').open();
+    });
 
-      this.element.addEventListener('click', (event) => {
-        event.preventDefault();
-        const account = event.target.closest('.account');
+    this.element.addEventListener('click', (event) => {
+      event.preventDefault();
+      const account = event.target.closest('.account');
 
-        if (account) {
-          this.onSelectAccount(account);
-        }
-      });
+      if (account) {
+        this.onSelectAccount(account);
+      }
     });
   }
 
@@ -57,8 +57,8 @@ class AccountsWidget {
    * */
   update() {
     if (User.current()) {
-      Account.list(data, (err, response) => {
-        if(response && response.success) { 
+      Account.list({}, (err, response) => {
+        if (response && response.success) { 
           this.clear();
           response.data.forEach(item => {
             this.renderItem(item);
@@ -105,7 +105,7 @@ class AccountsWidget {
    * item - объект с данными о счёте
    * */
   getAccountHTML(item) {
-    return `<li class="active account" data-id=${item.id}>
+    return `<li class="account" data-id=${item.id}>
       <a href="#">
         <span>${item.name}</span> /
         <span>${item.sum} ₽</span>

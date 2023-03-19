@@ -34,6 +34,11 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "bank",
+      "user_id": "1z3waemb2slfca5e33",
+      "id": "1z3waemg8clff7xi2i"
     }
   ],
   "transactions": [
